@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: customUri
@@ -22,7 +22,7 @@ dataSources:
         - UpdatedTokenUri
       abis:
         - name: customUri
-          file: ./abis/customUri.json
+          file: customUri/abis/customUri.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,indexed uint256)
           handler: handleApproval
@@ -36,4 +36,4 @@ dataSources:
           handler: handleTransfer
         - event: UpdatedTokenUri(indexed uint256,string,address,string)
           handler: handleUpdatedTokenUri
-      file: ./src/custom-uri.ts
+      file: customUri/customUri.wasm
